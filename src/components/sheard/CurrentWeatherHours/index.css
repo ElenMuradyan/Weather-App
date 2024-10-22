@@ -1,0 +1,10 @@
+.hours_container{
+    width: 100%;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr;
+} 
+.hour>img{
+width: 50px;
+}
