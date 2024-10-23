@@ -1,4 +1,6 @@
 .current_weather_container{
-width: 90%;
-padding: 5%;
+width: 80%;
+padding-left: 10%;
+padding-right:10% ;
+background-color: rgba(43, 168, 226, 0.288);
 }

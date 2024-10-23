@@ -1,10 +1,51 @@
+.hours_and_diagram_container{
+background-color:rgba(255, 255, 255, 0.236) ;
+}
 .hours_container{
-    width: 100%;
-    height: 300px;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 1fr;
+    width: 120%;
+    color: white;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
 } 
 .hour>img{
-width: 50px;
+    width:50px;
+}
+.hours_and_diagram_container{
+    padding: 5%;
+}
+svg{
+    height: 200px;
+    width: 100%;
+}
+.diagram_container{
+    font-size: 30px;
+    width:50%;
+    flex-direction: column;
+}
+@media (max-width:990px) {
+    .hours_and_diagram_container{
+        flex-direction: column;
+        gap:50px
+    }
+    .hours_container{
+        width: 100%;
+    }
+    .diagram_container{
+        width: 100%;
+        font-size: 20px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width:620px) {
+    .diagram_container>span{
+        display: none;
+    }
+    .hours_container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
 }

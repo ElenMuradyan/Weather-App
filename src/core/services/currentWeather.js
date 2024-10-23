@@ -1,7 +1,7 @@
 import { currentWeatherUrl } from "../utils/constants";
-let currentWeather = {};
 
-const CurrentWeather = async () => {
+const CurrentWeatherFunction = async () => {
+    let currentWeather = {};
     try{
     const response = await fetch(currentWeatherUrl);
     const data = await response.json();
@@ -28,14 +28,14 @@ console.log(currentWeather)
     }catch(error){
         console.log(error)    
 }
+return currentWeather
 };
 
 const getWindDirection = (degree) => {
     const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', 'N'];
     return directions[Math.round((degree % 360) / 45)];
 };
-CurrentWeather();
 
 export{
-    currentWeather
+    CurrentWeatherFunction
 }

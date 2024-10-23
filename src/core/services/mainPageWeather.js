@@ -1,8 +1,8 @@
 import { url } from "../utils/constants";
-let mainPageWeatherHours={};
-let hours=[];
+// let hours = [];
 
 const mainPageWeatherHoursFunction = async () => {
+    let mainPageWeatherHours = [];
    try{
     const response = await fetch(url);
     const data = await response.json();
@@ -16,22 +16,20 @@ const mainPageWeatherHoursFunction = async () => {
         const iconCode = hour.weather[0].icon; 
         const iconUrl = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
         const rainProbability = hour.pop ? hour.pop * 100 : 0;
-        mainPageWeatherHours[formattedTime]={
-          temperature:temperature,
-          weather:weather,
-          iconUrl:iconUrl,
-          rainProbability:rainProbability
-        }
-        hours.push(formattedTime);
+        mainPageWeatherHours.push({
+            hour:formattedTime,
+            temperature:temperature,
+            iconUrl:iconUrl,
+            weather:weather,
+            rainProbability:rainProbability
+        })
       });
     }catch(error){
        console.error('Error fetching weather data:', error);
    }
+   return mainPageWeatherHours
 }
 
-mainPageWeatherHoursFunction();
-
 export {
-    mainPageWeatherHours,
-    hours
+    mainPageWeatherHoursFunction
 }
