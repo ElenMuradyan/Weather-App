@@ -4,7 +4,7 @@ import { weekdayIndex } from "./getData";
 let daysArray = [];
 
 const nextFivedaysFunction = () => {
-daysArray = daysArray.concat(weekdays.slice(weekdayIndex));
+daysArray = daysArray.concat(weekdays.slice(weekdayIndex+1));
 if(daysArray.length<5){
     const missingElemSum = 5 - daysArray.length
     daysArray =  daysArray.concat(weekdays.slice(0, missingElemSum))

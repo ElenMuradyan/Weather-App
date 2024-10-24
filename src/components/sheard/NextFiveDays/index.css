@@ -14,3 +14,23 @@
 .day:hover{
 background-color: rgba(80, 80, 80, 0.227);
 }
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width:620px) {
+    .days{
+        flex-direction: column;
+        gap:10px;
+    }
+    .day{
+        flex-direction: row;
+        width: 100%;
+        background-color: rgba(12, 13, 14, 0.308);
+    }
+    .flex{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}

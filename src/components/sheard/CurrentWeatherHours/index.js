@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react';
 import { scaleBand, scaleLinear } from '@visx/scale';
 import { Group } from '@visx/group';
 import { AreaClosed } from '@visx/shape';
-import { AxisLeft, AxisBottom } from '@visx/axis';
+import { AxisBottom } from '@visx/axis';
 import { LinearGradient } from '@visx/gradient';
 import { height, width, margin, Colors } from '../../../core/utils/constants';
 import { Flex } from 'antd';
+import Loading from '../Loading';
 
 import './index.css';
 
@@ -38,7 +39,7 @@ const CurrentWeatherHours = () => {
     yScale.range([height, 0]);
 
     if (!data.length) {
-        return <div>Loading...</div>;
+        return <Loading/>;
     }
 
     const x = d => xScale(d.hour);
@@ -72,7 +73,7 @@ const CurrentWeatherHours = () => {
           />
         <LinearGradient
             from='#fbc2eb'
-            to='#a6c1ee'
+            to='rgba(0, 0, 0, 0.385)'
             id='gradient'
         />
    </Group>

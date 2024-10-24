@@ -4,7 +4,6 @@ background-color:rgba(255, 255, 255, 0.236) ;
 .hours_container{
     width: 120%;
     color: white;
-    height: 100px;
     display: flex;
     justify-content: space-between;
 } 
@@ -12,7 +11,9 @@ background-color:rgba(255, 255, 255, 0.236) ;
     width:50px;
 }
 .hour{
+    background-color: rgba(0, 0, 0, 0.285);
     height: 100px;
+    margin:5px;
     padding: 20px;
     border-radius: 12px;
 }
@@ -37,6 +38,8 @@ svg{
         gap:50px
     }
     .hours_container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
         width: 100%;
     }
     .diagram_container{
@@ -51,9 +54,4 @@ svg{
     .diagram_container>span{
         display: none;
     }
-    .hours_container{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-    }
-
 }

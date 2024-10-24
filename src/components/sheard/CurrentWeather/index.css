@@ -1,6 +1,26 @@
 .current_weather_container{
+display: flex;
+justify-content: space-between;
 width: 80%;
 padding-left: 10%;
 padding-right:10% ;
 background-color: rgba(0, 0, 0, 0.288);
+}
+.flex_container{
+    width: 70%;
+}
+.current_weather_container:hover{
+    background-color: rgba(0, 0, 0, 0.54);
+}
+@media (max-width:990px) {
+    .flex_container{
+    width: 100%;
+    flex-direction: column;
+    }
+    .current_weather_container{
+        flex-direction: column;
+    }
+    .description{
+        display: none;
+    }
 }

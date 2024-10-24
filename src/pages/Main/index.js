@@ -7,7 +7,6 @@ const Main = () => {
             <CurrentWeather></CurrentWeather> 
             <CurrentWeatherHours></CurrentWeatherHours>
             <NextFiveDays></NextFiveDays>
-
         </div>
     )
 }

@@ -1,5 +1,12 @@
 export const ROUTE_CONSTANTS = {
     MAIN:'./main',
+    MONDAY: '/Monday',
+    TUESDAY: '/Tuesday',
+    WEDNESDAY: '/Wednesday',
+    THURSDAY: '/Thursday',
+    FRIDAY: '/Friday',
+    SATURDAY: '/Saturday',
+    SUNDAY: '/Sunday'
 }
 
 export const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];

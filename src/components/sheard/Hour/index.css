@@ -1,0 +1,12 @@
+.hour_weather_container{
+background-color: rgba(98, 110, 125, 0.258);
+width: 120%;
+display: flex;
+justify-content: center;
+margin:10px 0px 0px 0px;
+padding: 5%;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)
+}
+.hour_weather_container:hover{
+    background-color: rgba(98, 110, 125, 0.584);
+}
