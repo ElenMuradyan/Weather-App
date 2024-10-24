@@ -6,11 +6,9 @@ import { AreaClosed } from '@visx/shape';
 import { AxisLeft, AxisBottom } from '@visx/axis';
 import { LinearGradient } from '@visx/gradient';
 import { height, width, margin, Colors } from '../../../core/utils/constants';
-import { Flex, Typography } from 'antd';
-import './index.css';
-import { Color } from 'antd/es/color-picker';
+import { Flex } from 'antd';
 
-const { Title } = Typography;
+import './index.css';
 
 const CurrentWeatherHours = () => {
     const [data, setData] = useState([]);
@@ -102,16 +100,3 @@ export default CurrentWeatherHours;
 
 
 
-// <div className='hours_container'>
-    //     {hours.map((hour, idx) => {
-    //         const { temperature, weather, iconUrl, rainProbability} = mainPageWeatherHours[hour];
-    //         return (
-    //         <Flex justify="center" align="center" vertical key={idx}>
-    //             <span>{hour}</span>
-    //             <img src={iconUrl} alt={weather}/>
-    //             <Flex align="center"><img src={`http://openweathermap.org/img/wn/10d@2x.png`} alt="Rain" style={{width:50}}/><span>{rainProbability}%</span></Flex>
-    //             <span>{Math.round(temperature)}°C</span>
-    //         </Flex>
-    //                 )
-    //     })}
-    // </div>

@@ -5,11 +5,11 @@ const CurrentWeatherFunction = async () => {
     try{
     const response = await fetch(currentWeatherUrl);
     const data = await response.json();
-    const temperature = data.main.temp; 
-    const maxTemperature = data.main.temp_max; 
-    const minTemperature = data.main.temp_min; 
+    const temperature = Math.round(data.main.temp); 
+    const maxTemperature = Math.round(data.main.temp_max); 
+    const minTemperature = Math.round(data.main.temp_min); 
     const weatherDescription = data.weather[0].description; 
-    const windSpeed = data.wind.speed; 
+    const windSpeed = Math.round(data.wind.speed); 
     const windDirection = data.wind.deg;
     const windDirectionText = getWindDirection(windDirection);
     const iconCode = data.weather[0].icon;

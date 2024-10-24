@@ -1,5 +1,4 @@
 import { url } from "../utils/constants";
-// let hours = [];
 
 const mainPageWeatherHoursFunction = async () => {
     let mainPageWeatherHours = [];

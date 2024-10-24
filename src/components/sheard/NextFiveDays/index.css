@@ -1,0 +1,16 @@
+.days_container{
+    width: 90%;
+    padding: 2% 5% 5% 5%;
+    background-color: #43586945;
+    text-align: center;
+}
+.days_container>span{
+    color: white;
+}
+.day{
+    padding:5px;
+    border-radius: 12px;
+}
+.day:hover{
+background-color: rgba(80, 80, 80, 0.227);
+}

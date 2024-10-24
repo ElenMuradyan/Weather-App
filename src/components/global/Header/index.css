@@ -1,5 +1,6 @@
 .header_container{
+    width: 100%;
     padding:20px;
-    color: rgba(94, 33, 118, 0.207);
+    color: rgba(0, 0, 0, 0.207);
     background-color: rgba(255, 255, 255, 0.388);
 }
