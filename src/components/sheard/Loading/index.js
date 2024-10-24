@@ -2,9 +2,9 @@ import { Spin } from "antd";
 
 const Loading = () => {
     return(
-<div>
-<Spin fullscreen></Spin>
-</div>
+        <div>
+        <Spin fullscreen></Spin>
+        </div>
     );
 };
 

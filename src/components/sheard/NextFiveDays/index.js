@@ -23,10 +23,11 @@ const NextFiveDays = () => {
         getWeather();
         console.log(weatherData);
     },[]);
+    
     if(!weatherData.length){
-return(
-    <Loading/>
-)
+        return(
+            <Loading/>
+        )
     }
 
 return(<div className="days_container">

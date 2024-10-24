@@ -1,6 +1,7 @@
 import { hourlyWeather } from "../../core/services/hourlyWeather";
 import { useEffect, useState } from "react";
 import { Flex } from "antd";
+import Loading from "../../components/sheard/Loading";
 import Hour from "../../components/sheard/Hour";
 
 const WeekDayPage = ({ dayName }) => {
@@ -22,7 +23,7 @@ const WeekDayPage = ({ dayName }) => {
     },[]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <Loading/>;
     }
 
 return(<Flex align="center" justify="center" vertical>

@@ -13,3 +13,6 @@ body{
     background-repeat: no-repeat;
     overflow-x: hidden;
 }
+html{
+    overflow-x: hidden;
+}

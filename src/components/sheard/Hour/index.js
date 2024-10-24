@@ -4,12 +4,13 @@ import './index.css'
 
 const { Title } = Typography;
 
-
 const Hour = ({ data }) => {
-const { day, hour, temperature, iconUrl, weather, windDirection, windSpeed, max, min} = data
+
+const { day, hour, temperature, iconUrl, weather, windDirection, windSpeed, max, min} = data;
+
 return(
 <div className="hour_weather_container">
-             <Flex justify="space-between" align='center' className="flex_container">
+             <Flex justify="space-between" align='center' className="flex_container1">
              <Flex align="center" vertical>
              <Title level={3} style={{color:Colors.whiteOpacity,margin: '0', padding: '0' }}>{day}</Title>
              <Title level={3} style={{color:Colors.whiteOpacity,margin: '0', padding: '0'}}>{hour}<span style={{fontSize:10}}>AM</span></Title>
@@ -19,7 +20,7 @@ return(
                  <img src={iconUrl} alt="weatherdescribtion"></img>
                  <Title level={4} style={{color:'white'}}>{weather.charAt(0).toUpperCase() + weather.slice(1).toLowerCase()}</Title>
             </Flex>
-             <Flex justify="center" align="flex-end" vertical>
+             <Flex justify="center" align="flex-end" vertical className="describtion">
              <Title level={5} style={{color:Colors.whiteOpacity}}>Wind direction:{windDirection}</Title>             
              <Title level={5} style={{color:Colors.whiteOpacity}}>Wind speed:{windSpeed}</Title>
              <Title level={5} style={{color:Colors.whiteOpacity}}>Max:{max}</Title>
