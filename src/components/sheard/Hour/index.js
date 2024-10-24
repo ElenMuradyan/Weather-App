@@ -16,7 +16,7 @@ return(
              </Flex>
              <Flex vertical align="center" justify="center">
                  <Title level={3} style={{margin: '0', padding: '0', color:'white'}}>{temperature}°C</Title>
-                 <img src={iconUrl}></img>
+                 <img src={iconUrl} alt="weatherdescribtion"></img>
                  <Title level={4} style={{color:'white'}}>{weather.charAt(0).toUpperCase() + weather.slice(1).toLowerCase()}</Title>
             </Flex>
              <Flex justify="center" align="flex-end" vertical>

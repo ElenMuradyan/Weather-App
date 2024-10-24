@@ -45,7 +45,7 @@ const CurrentWeather = () => {
             <Flex vertical align="center" justify="center">
                 <Title level={3} style={{margin: '0', padding: '0', textAlign:'center', color:'white'}}>THE CURRENT TEMPERATURE IS</Title>
                 <Title level={3} style={{margin: '0', padding: '0', color:'white'}}>{temperature}°C</Title>
-                <img src={iconUrl}></img>
+                <img src={iconUrl} alt="weatherDescribtion"></img>
                 <Title level={4} style={{color:'white'}}>{weatherDescription.charAt(0).toUpperCase() + weatherDescription.slice(1).toLowerCase()}</Title>
             </Flex>
             <Flex justify="center" align="flex-end" vertical className="description">

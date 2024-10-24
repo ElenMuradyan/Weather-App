@@ -1,7 +1,6 @@
-import { Typography, Button } from "antd";
+import { Typography } from "antd";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Colors } from "../../../core/utils/constants";
 import './index.css';
 
 const { Title } = Typography;
