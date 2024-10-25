@@ -1,5 +1,5 @@
 export const ROUTE_CONSTANTS = {
-    MAIN:'./main',
+    MAIN:'/main',
     MONDAY: '/Monday',
     TUESDAY: '/Tuesday',
     WEDNESDAY: '/Wednesday',

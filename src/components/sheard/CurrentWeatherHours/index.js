@@ -21,7 +21,6 @@ const CurrentWeatherHours = () => {
 
     useEffect(() => {
         dataFunction();
-        console.log(data)
     }, []);
 
     const xScale = scaleBand({
@@ -65,7 +64,6 @@ const CurrentWeatherHours = () => {
         />
        <AreaClosed
           data={data}
-          xScale={xScale}
           yScale={yScale}
           x={x}
           y={y}

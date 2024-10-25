@@ -3,6 +3,7 @@ import { daysArray } from "../functions/nextFiveDays";
 
 const hourlyWeather = async () => {
     let weatherByDay= {};
+    
     try{
         const response = await fetch(url);
         const data = await response.json();
@@ -33,10 +34,12 @@ const hourlyWeather = async () => {
     }
 return weatherByDay;
 }
+
 const getWindDirection = (degree) => {
     const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', 'N'];
     return directions[Math.round((degree % 360) / 45)];
 };
+
 export{
     hourlyWeather,
 }

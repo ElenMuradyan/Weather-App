@@ -21,7 +21,6 @@ const NextFiveDays = () => {
 
     useEffect(()=>{
         getWeather();
-        console.log(weatherData);
     },[]);
     
     if(!weatherData.length){
@@ -35,7 +34,7 @@ return(<div className="days_container">
     <Flex justify="space-between" className="days">
         {weatherData.map((item, idx) => {
     const { weatherDescription, windSpeed, iconUrl, windDirection, temperature } = item;
-    return( <Link to={`/${daysArray[idx]}`} style={{color:'white'}}><Flex justify="center" align="center" vertical key={idx} className='day'>
+    return( <Link to={`/Erevan/${daysArray[idx]}`} style={{color:'white'}}  key={idx}><Flex justify="center" align="center" vertical className='day'>
                     <div className="flex">
                     <span>{daysArray[idx]}</span>
                     <img src={iconUrl} alt={weatherDescription}/>

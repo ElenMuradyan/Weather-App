@@ -13,7 +13,7 @@ return(
              <Flex justify="space-between" align='center' className="flex_container1">
              <Flex align="center" vertical>
              <Title level={3} style={{color:Colors.whiteOpacity,margin: '0', padding: '0' }}>{day}</Title>
-             <Title level={3} style={{color:Colors.whiteOpacity,margin: '0', padding: '0'}}>{hour}<span style={{fontSize:10}}>AM</span></Title>
+             <Title level={3} style={{color:Colors.whiteOpacity,margin: '0', padding: '0'}}>{hour}</Title>
              </Flex>
              <Flex vertical align="center" justify="center">
                  <Title level={3} style={{margin: '0', padding: '0', color:'white'}}>{temperature}°C</Title>

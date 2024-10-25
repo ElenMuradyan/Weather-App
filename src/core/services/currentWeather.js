@@ -24,8 +24,7 @@ const CurrentWeatherFunction = async () => {
         windDirection: windDirectionText,
         iconUrl:iconUrl
     };
-console.log(currentWeather)
-    }catch(error){
+}catch(error){
         console.log(error)    
 }
 return currentWeather
