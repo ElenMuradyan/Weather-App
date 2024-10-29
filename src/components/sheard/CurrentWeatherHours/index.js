@@ -6,22 +6,28 @@ import { AreaClosed } from '@visx/shape';
 import { AxisBottom } from '@visx/axis';
 import { LinearGradient } from '@visx/gradient';
 import { height, width, margin, Colors } from '../../../core/utils/constants';
-import { Flex } from 'antd';
+import { Flex, notification } from 'antd';
 import Loading from '../Loading';
 
 import './index.css';
 
-const CurrentWeatherHours = () => {
+const CurrentWeatherHours = ({currentWeatherHoursData}) => {
     const [data, setData] = useState([]);
 
-    const dataFunction = async () => {
-        const weatherData = await mainPageWeatherHoursFunction();
-        setData(weatherData);
+    const dataFunction = (data) => {
+        try {
+            const weatherData = mainPageWeatherHoursFunction(data); // Await the function
+            setData(weatherData);
+        } catch (error) {
+            console.log(error)
+        }
     };
 
     useEffect(() => {
-        dataFunction();
-    }, []);
+        if (currentWeatherHoursData) {
+            dataFunction(currentWeatherHoursData);
+        }
+    }, [currentWeatherHoursData]);
 
     const xScale = scaleBand({
         domain: data.map(d => d.hour),
@@ -94,8 +100,3 @@ const CurrentWeatherHours = () => {
 };
 
 export default CurrentWeatherHours;
-
-
-
-
-

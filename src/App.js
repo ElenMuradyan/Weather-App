@@ -12,8 +12,8 @@ const App=()=>{
       createBrowserRouter(
         createRoutesFromElements(
           <Route path='/' element={<MainLayout />}>
-            <Route index element={<Main/>}></Route>
-            <Route path="Erevan/:dayName" element={<WeekDayPage />} />
+            <Route path=":cityName" index element={<Main/>}></Route>
+            <Route path=":cityName/:dayName" element={<WeekDayPage />} />
           </Route>
         )
       )

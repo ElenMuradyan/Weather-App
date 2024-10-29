@@ -2,7 +2,7 @@ import { formattedDate } from "../../../core/functions/getData";
 import { currentTimeClock } from "../../../core/functions/getHour";
 import { CurrentWeatherFunction } from "../../../core/services/currentWeather";
 import { useEffect, useState } from "react";
-import {Typography} from "antd";
+import {notification, Typography} from "antd";
 import { Flex } from "antd";
 import { Colors } from "../../../core/utils/constants";
 import Loading from "../Loading";
@@ -10,7 +10,7 @@ import './index.css';
 
 const { Title } = Typography;
 
-const CurrentWeather = () => {
+const CurrentWeather = ({currentWeatherData}) => {
     const [currentWeather, setCurrentWeather] = useState({
         weatherDescription: '',
         windSpeed: '',
@@ -20,18 +20,24 @@ const CurrentWeather = () => {
         maxTemperature: '',
         minTemperature: ''
     });
-        const getCurrentWeather = async () => {
-            const data = await CurrentWeatherFunction()
+    const getCurrentWeather = async (currentWeatherData) => {
+        try {
+            const data = CurrentWeatherFunction(currentWeatherData); // Await the function
             setCurrentWeather(data);
+        } catch (error) {
+           console.log(error)
+        }
     };
 
-    useEffect(()=>{
-        getCurrentWeather();
-    },[]) 
+    useEffect(() => {
+        if (currentWeatherData) {
+            getCurrentWeather(currentWeatherData);
+        }
+    }, [currentWeatherData]);
 
     if (!currentWeather.temperature) {
         return <Loading/>;
-    }
+    };
 
     const { weatherDescription, windSpeed, iconUrl, windDirection, temperature, maxTemperature, minTemperature } = currentWeather;
      

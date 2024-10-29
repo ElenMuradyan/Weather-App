@@ -4,15 +4,17 @@ import { Flex } from "antd";
 import { useParams } from "react-router-dom";
 import Loading from "../../components/sheard/Loading";
 import Hour from "../../components/sheard/Hour";
+import { useSelector } from "react-redux";
 
 const WeekDayPage = () => {
     const [ data, setData ] = useState({});
     const [loading, setLoading] = useState(true);
     const { dayName } = useParams();
+    const  city = useSelector((state)=>state.city.value);
 
-    const getWeather = async () => {
+    const getWeather = async (city) => {
         try{
-            setData(await hourlyWeather());
+            setData(await hourlyWeather(city));
         }catch(error){
             console.log(error);
         }finally{
@@ -20,9 +22,14 @@ const WeekDayPage = () => {
         }
     };
 
-    useEffect(()=>{
-        getWeather();
-    },[]);
+    useEffect(() => {
+        if (city) {
+            getWeather(city);
+        } else {
+            console.log(city)
+            setLoading(false);
+        }
+    }, [city]);
 
     if (loading) {
         return <Loading/>;

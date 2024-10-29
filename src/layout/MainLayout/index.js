@@ -1,10 +1,11 @@
 import Header from '../../components/global/Header';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 
 const MainLayout = () => {
+    const { cityName } = useParams();
     return (
         <div>
-            <Header></Header>
+            <Header cityName={cityName}></Header>
             <main>
                 <Outlet></Outlet>
             </main>

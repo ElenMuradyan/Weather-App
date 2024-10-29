@@ -1,10 +1,5 @@
-import { url } from "../utils/constants";
-
-const mainPageWeatherHoursFunction = async () => {
+const mainPageWeatherHoursFunction = (data) => {
     let mainPageWeatherHours = [];
-   try{
-    const response = await fetch(url);
-    const data = await response.json();
     const hourlyData = data.list.slice(0, 8); 
     hourlyData.forEach(hour => {
         const time = new Date(hour.dt * 1000);
@@ -23,9 +18,6 @@ const mainPageWeatherHoursFunction = async () => {
             rainProbability:rainProbability
         })
       });
-    }catch(error){
-       console.error('Error fetching weather data:', error);
-   }
    return mainPageWeatherHours
 }
 

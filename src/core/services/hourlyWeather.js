@@ -1,17 +1,15 @@
-import { url } from "../utils/constants";
+import { url, apiKey } from "../utils/constants";
 import { daysArray } from "../functions/nextFiveDays";
 
-const hourlyWeather = async () => {
+const hourlyWeather = async (cityName) => {
     let weatherByDay= {};
     
-    try{
-        const response = await fetch(url);
+    try {
+        const response = await fetch(`${url}${cityName}&appid=${apiKey}&units=metric`);
         const data = await response.json();
-
-        let dailyForecast = data.list;
-
+        const dailyForecast = data.list;
         daysArray.forEach((item) => {
-            weatherByDay[item] = []
+            weatherByDay[item] = [];
             let hours = dailyForecast.slice(0,8);
             dailyForecast.splice(0, 8);
 
