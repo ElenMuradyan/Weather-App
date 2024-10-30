@@ -53,7 +53,7 @@ const CurrentWeatherHours = ({currentWeatherHoursData}) => {
     return (
         <Flex justify='space-between' align='center' className='hours_and_diagram_container'>
 <Flex className='diagram_container'>
-<svg>
+<svg className='svg'>
    <Group top={margin.top}>
        <AxisBottom
           scale={xScale}

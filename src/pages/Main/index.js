@@ -41,7 +41,8 @@ const Main = () => {
 
     useEffect(()=>{
         fetchCurrentWeather(city);
-    },[city])
+    },[city]);
+    
     return (
         <div>
             <CurrentWeather currentWeatherData={currentWeather}></CurrentWeather> 

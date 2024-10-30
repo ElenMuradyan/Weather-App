@@ -7,10 +7,10 @@ export const citySlice = createSlice({
     },
     reducers: {
         changeCity: (state, action) => {
-            state.value = action.payload
-        }
+            state.value = action.payload;
+        },
     },
 });
 
 export default citySlice.reducer;
-export const { changeCity } = citySlice.actions;
+export const { changeCity, resetCity } = citySlice.actions;
