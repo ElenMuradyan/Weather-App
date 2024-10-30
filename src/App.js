@@ -1,5 +1,4 @@
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
-import { ROUTE_CONSTANTS } from "./core/utils/constants";
 import Main from "./pages/Main";
 import MainLayout from "./layout/MainLayout";
 import WeekDayPage from "./pages/WeekDayPage";
