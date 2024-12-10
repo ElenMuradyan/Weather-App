@@ -4,8 +4,9 @@ import { CurrentWeatherFunction } from "../../../core/services/currentWeather";
 import { useEffect, useState } from "react";
 import {notification, Typography} from "antd";
 import { Flex } from "antd";
-import { Colors } from "../../../core/utils/constants";
+import { Colors, fontSize } from "../../../core/utils/constants";
 import Loading from "../Loading";
+
 import './index.css';
 
 const { Title } = Typography;
@@ -22,7 +23,7 @@ const CurrentWeather = ({currentWeatherData}) => {
     });
     const getCurrentWeather = async (currentWeatherData) => {
         try {
-            const data = CurrentWeatherFunction(currentWeatherData); // Await the function
+            const data = CurrentWeatherFunction(currentWeatherData);
             setCurrentWeather(data);
         } catch (error) {
            console.log(error)
@@ -45,7 +46,7 @@ const CurrentWeather = ({currentWeatherData}) => {
         <div className="current_weather_container">
             <Flex align="center" vertical>
             <Title level={3} style={{color:Colors.whiteOpacity,margin: '0', padding: '0' }}>{formattedDate}</Title>
-            <Title level={3} style={{color:Colors.whiteOpacity,margin: '0', padding: '0'}}>{currentTimeClock}<span style={{fontSize:10}}>AM</span></Title>
+            <Title level={3} style={{color:Colors.whiteOpacity,margin: '0', padding: '0'}}>{currentTimeClock}<span style={{fontSize: fontSize}}>AM</span></Title>
             </Flex>
             <Flex justify="space-between" align='center' className="flex_container">
             <Flex vertical align="center" justify="center">

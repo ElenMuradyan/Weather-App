@@ -1,10 +1,21 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cityReducer from './citySlice';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'; 
+import cityReducer from './citySlice'; 
+
+const persistConfig = {
+    key: 'root',
+    storage,
+};
+
+const persistedCityReducer = persistReducer(persistConfig, cityReducer);
 
 const store = configureStore({
     reducer: {
-        city: cityReducer,
+        city: persistedCityReducer, 
     },
 });
 
-export default store;
+const persistor = persistStore(store);
+
+export { store, persistor };

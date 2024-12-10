@@ -5,7 +5,7 @@ import { Group } from '@visx/group';
 import { AreaClosed } from '@visx/shape';
 import { AxisBottom } from '@visx/axis';
 import { LinearGradient } from '@visx/gradient';
-import { height, width, margin, Colors } from '../../../core/utils/constants';
+import { height, width, margin, Colors, minHeight } from '../../../core/utils/constants';
 import { Flex, notification } from 'antd';
 import Loading from '../Loading';
 
@@ -16,7 +16,7 @@ const CurrentWeatherHours = ({currentWeatherHoursData}) => {
 
     const dataFunction = (data) => {
         try {
-            const weatherData = mainPageWeatherHoursFunction(data); // Await the function
+            const weatherData = mainPageWeatherHoursFunction(data); 
             setData(weatherData);
         } catch (error) {
             console.log(error)
@@ -90,7 +90,7 @@ const CurrentWeatherHours = ({currentWeatherHoursData}) => {
                 return( <Flex justify="center" align="center" vertical key={idx} className='hour'>
                         <span>{hour}</span>
                         <img src={iconUrl} alt={weather}/>
-                        <Flex align="center"><img src={`http://openweathermap.org/img/wn/10d@2x.png`} alt="Rain" style={{width:40}}/><span>{rainProbability}%</span></Flex>
+                        <Flex align="center"><img src={`http://openweathermap.org/img/wn/10d@2x.png`} alt="Rain" style={{width: minHeight}}/><span>{rainProbability}%</span></Flex>
                         <span>{Math.round(temperature)}°C</span>
                         </Flex>)
        })}

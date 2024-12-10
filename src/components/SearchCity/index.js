@@ -6,6 +6,7 @@ import { useState } from "react";
 import { currentWeatherUrl, apiKey } from "../../core/utils/constants";
 import Loading from "../sheard/Loading";
 import { useNavigate } from "react-router-dom";
+
 import './index.css';
 
 const SearchCity = () => {
@@ -22,20 +23,28 @@ const SearchCity = () => {
 
     const submitCityName = async () => {
         setLoading(true)
-        try{
-            const response = await fetch(`${currentWeatherUrl}${inputValue}&appid=${apiKey}`);
-            if (!response.ok) {
-                throw new Error('City not found');
-            };
-            dispatch(changeCity(inputValue));
-            city = inputValue;
-        }catch{
+        if(inputValue){
+            try{
+                const response = await fetch(`${currentWeatherUrl}${inputValue}&appid=${apiKey}`);
+                if (!response.ok) {
+                    throw new Error('City not found');
+                };
+                dispatch(changeCity(inputValue));
+                city = inputValue;
+                navigate(city)
+            }catch{
+                notification.error({
+                    message:'Invalid city name,please try again',
+                });
+            }finally{
+                setLoading(false);
+                setInputValue('');
+            }
+        }else{
             notification.error({
                 message:'Invalid city name,please try again',
             });
-        }finally{
-            setLoading(false);
-            setInputValue('');
+            setLoading(false)
         }
     };
     const handleKeyDown = async (e) => {

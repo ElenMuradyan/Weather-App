@@ -45,9 +45,14 @@ const Main = () => {
     
     return (
         <div>
-            <CurrentWeather currentWeatherData={currentWeather}></CurrentWeather> 
-            <CurrentWeatherHours currentWeatherHoursData={weather}></CurrentWeatherHours>
-            <NextFiveDays nextFiveDaysData={weather}></NextFiveDays>
+            {currentWeather.weather && <CurrentWeather currentWeatherData={currentWeather}></CurrentWeather>}
+            {
+                weather.list && (<>
+                    <CurrentWeatherHours currentWeatherHoursData={weather}></CurrentWeatherHours>
+                    <NextFiveDays nextFiveDaysData={weather}></NextFiveDays>
+                </>
+                )
+            }
         </div>
     )
 }
